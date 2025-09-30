@@ -1,0 +1,37 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "description": "Apple Store Monitor 微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npm run build:dev && npm run dev:wechat",
+    "dev:wechat": "echo '请在微信开发者工具中打开当前目录'",
+    "build": "npm run build:prod",
+    "build:dev": "cross-env NODE_ENV=development webpack --config build/webpack.dev.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
+    "lint": "eslint src --ext .ts,.js --fix",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.11.0",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/wechat-miniprogram": "^3.4.4",
+    "cross-env": "^7.0.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "ts-loader": "^9.5.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "rimraf": "^5.0.5"
+  },
+  "keywords": [
+    "wechat-miniprogram",
+    "typescript",
+    "mobx",
+    "apple-store"
+  ]
+}

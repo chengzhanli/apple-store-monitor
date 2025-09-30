@@ -1,0 +1,49 @@
+{
+  "name": "apple-store-monitor",
+  "version": "1.0.0",
+  "description": "Apple Store 监控系统 - 包含服务端和微信小程序",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev:srv": "pnpm -F srv dev",
+    "dev:mini": "pnpm -F miniprogram dev",
+    "build:srv": "pnpm -F srv build",
+    "build:mini": "pnpm -F miniprogram build",
+    "start:srv": "pnpm -F srv start",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "test": "pnpm -r test",
+    "test:coverage": "pnpm -r test:coverage",
+    "clean": "pnpm -r clean",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write \"**/*.{js,ts,json,md}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "keywords": [
+    "apple-store",
+    "monitor",
+    "wechat-miniprogram",
+    "nodejs",
+    "pnpm-workspace"
+  ],
+  "author": "",
+  "license": "ISC"
+}

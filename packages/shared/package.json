@@ -1,0 +1,26 @@
+{
+  "name": "@apple-store-monitor/shared",
+  "version": "1.0.0",
+  "description": "Apple Store Monitor 共享代码包",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  },
+  "keywords": [
+    "shared",
+    "typescript",
+    "utilities"
+  ]
+}

@@ -1,0 +1,277 @@
+# Apple Store Monitor - Cursor AI 提示规则
+
+## 项目概述
+Apple Store Monitor 是一个使用 pnpm workspace 构建的监控系统，包含：
+- `apps/srv`: Node.js 服务端应用
+- `apps/miniprogram`: 微信小程序客户端
+
+## 开发环境与工具链
+
+### 包管理器
+- 使用 pnpm workspace 管理 monorepo
+- 包管理器版本：pnpm@10.17.1
+- 严格使用 pnpm 命令，不要使用 npm 或 yarn
+
+### 代码规范
+遵循以下编码规范：
+- TypeScript 优先
+- ESLint + Prettier 代码格式化
+- Conventional Commits 提交规范
+- JSDoc 注释规范
+
+## 服务端开发规范 (apps/srv)
+
+### 技术栈
+- **框架**: 推荐使用 Fastify 或 Koa.js（高性能、轻量级）
+- **语言**: TypeScript
+- **数据库**: 根据需求选择 MySQL/PostgreSQL + Redis
+- **ORM**: Prisma 或 TypeORM
+- **认证**: JWT + 微信小程序认证
+- **日志**: Winston 或 Pino
+- **进程管理**: PM2
+
+### 目录结构
+```
+apps/srv/
+├── src/
+│   ├── controllers/     # 控制器层
+│   ├── services/        # 业务逻辑层  
+│   ├── models/          # 数据模型
+│   ├── middlewares/     # 中间件
+│   ├── utils/           # 工具函数
+│   ├── config/          # 配置文件
+│   ├── types/           # TypeScript 类型定义
+│   └── app.ts           # 应用入口
+├── tests/               # 测试文件
+├── prisma/              # 数据库 schema
+└── package.json
+```
+
+### 开发规范
+1. **API 设计**:
+   - 遵循 RESTful 规范
+   - 统一的响应格式：`{ code, message, data }`
+   - 完整的错误处理和状态码
+   - API 版本控制：`/api/v1/`
+
+2. **数据库操作**:
+   - 使用事务处理复杂操作
+   - 避免 N+1 查询问题
+   - 合理使用数据库索引
+   - 敏感数据加密存储
+
+3. **安全规范**:
+   - 输入参数验证（使用 Joi 或 Zod）
+   - SQL 注入防护
+   - XSS 防护
+   - CORS 配置
+   - 限流中间件
+
+4. **性能优化**:
+   - Redis 缓存策略
+   - 分页查询
+   - 异步处理长时间任务
+   - 图片/文件上传使用云存储
+
+### 错误处理
+```typescript
+// 统一错误处理示例
+interface ApiResponse<T = any> {
+  code: number;
+  message: string;
+  data?: T;
+  timestamp: string;
+}
+
+class AppError extends Error {
+  public statusCode: number;
+  public isOperational: boolean;
+
+  constructor(message: string, statusCode: number) {
+    super(message);
+    this.statusCode = statusCode;
+    this.isOperational = true;
+  }
+}
+```
+
+## 微信小程序开发规范 (apps/miniprogram)
+
+### 技术栈
+- **开发框架**: 原生小程序 或 Taro/uni-app
+- **语言**: TypeScript
+- **状态管理**: MobX 或 Pinia (Taro)
+- **UI 组件**: WeUI 或 Vant Weapp
+- **网络请求**: 封装 wx.request
+
+### 目录结构
+```
+apps/miniprogram/
+├── src/
+│   ├── pages/           # 页面文件
+│   ├── components/      # 组件
+│   ├── utils/           # 工具函数
+│   ├── services/        # API 服务
+│   ├── store/           # 状态管理
+│   ├── styles/          # 样式文件
+│   └── app.json         # 应用配置
+├── static/              # 静态资源
+└── package.json
+```
+
+### 开发规范
+1. **页面开发**:
+   - 合理使用生命周期钩子
+   - 及时清理定时器和监听器
+   - 优化页面渲染性能
+   - 合理使用分包加载
+
+2. **组件设计**:
+   - 遵循单一职责原则
+   - 明确的 Props 类型定义
+   - 合理的事件传递
+   - 支持自定义样式
+
+3. **网络请求**:
+   ```typescript
+   // 统一的请求封装
+   interface RequestConfig {
+     url: string;
+     method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+     data?: any;
+     showLoading?: boolean;
+   }
+
+   class Http {
+     private baseURL = 'https://api.example.com';
+     
+     async request<T>(config: RequestConfig): Promise<T> {
+       // 统一处理：token、loading、错误处理
+     }
+   }
+   ```
+
+4. **微信 API 使用**:
+   - 妥善处理授权流程
+   - 合理使用缓存机制
+   - 处理网络异常情况
+   - 遵循微信小程序规范
+
+### 性能优化
+- 图片懒加载和压缩
+- 合理使用 setData
+- 避免频繁的 DOM 操作
+- 使用 IntersectionObserver
+- 分包加载优化
+
+## Workspace 配置规范
+
+### pnpm-workspace.yaml
+```yaml
+packages:
+  - 'apps/*'
+  - 'packages/*'
+```
+
+### 根目录 package.json 脚本
+```json
+{
+  "scripts": {
+    "dev:srv": "pnpm -F srv dev",
+    "dev:mini": "pnpm -F miniprogram dev",
+    "build:srv": "pnpm -F srv build",
+    "build:mini": "pnpm -F miniprogram build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean"
+  }
+}
+```
+
+### 共享依赖管理
+- 开发工具放在根目录：eslint, prettier, typescript
+- 业务依赖放在各自的子包中
+- 共用的工具类可以抽取到 `packages/shared`
+
+## 代码提交规范
+
+### Conventional Commits
+```
+type(scope): description
+
+feat(srv): 添加用户认证接口
+fix(mini): 修复页面加载问题
+docs: 更新API文档
+style: 代码格式化
+refactor(srv): 重构数据库连接逻辑
+test: 添加单元测试
+chore: 更新依赖包
+```
+
+### Git 工作流
+- main: 主分支，用于生产环境
+- develop: 开发分支
+- feature/*: 功能分支
+- hotfix/*: 热修复分支
+
+## 部署与监控
+
+### 服务端部署
+- 使用 Docker 容器化部署
+- PM2 进程管理
+- Nginx 反向代理
+- 日志监控和告警
+
+### 小程序发布
+- 遵循微信小程序发布流程
+- 版本管理和灰度发布
+- 性能监控和错误上报
+
+## 开发最佳实践
+
+### 通用规范
+1. **命名规范**:
+   - 变量/函数: camelCase
+   - 组件: PascalCase  
+   - 常量: UPPER_SNAKE_CASE
+   - 文件名: kebab-case
+
+2. **注释规范**:
+   - 使用 JSDoc 格式
+   - 复杂逻辑必须添加注释
+   - TODO 注释标注负责人
+
+3. **类型安全**:
+   - 严格的 TypeScript 配置
+   - 避免使用 any 类型
+   - 合理使用泛型
+
+4. **测试覆盖**:
+   - 单元测试覆盖率 > 80%
+   - 集成测试覆盖关键流程
+   - E2E 测试覆盖核心业务
+
+### 安全考虑
+- 敏感信息环境变量管理
+- API 接口鉴权
+- 数据传输加密
+- 定期安全扫描
+
+## AI 辅助开发指导
+
+### 代码生成提示
+当需要 AI 协助时，请提供：
+1. 明确的功能需求描述
+2. 相关的技术栈信息
+3. 现有代码上下文
+4. 期望的代码风格
+
+### 代码审查重点
+1. 安全性检查
+2. 性能优化建议
+3. 代码规范遵循
+4. 架构合理性评估
+
+---
+
+**注意**: 此文档会根据项目发展持续更新，请定期查看最新版本。
