@@ -1,0 +1,54 @@
+curl 'https://www.apple.com.cn/shop/address-lookup?state=%E5%8C%97%E4%BA%AC&city=%E5%8C%97%E4%BA%AC&district=%E4%B8%9C%E5%9F%8E%E5%8C%BA' \
+  -H 'accept: */*' \
+  -H 'accept-language: zh-CN,zh;q=0.9' \
+  -H 'cache-control: no-cache' \
+  -b 'dssid2=1d95e066-2e33-455b-9661-8e51fb3010ee; dssf=1; as_sfa=Mnxjbnxjbnx8emhfQ058Y29uc3VtZXJ8aW50ZXJuZXR8MHwwfDE; as_uct=2; geo=SG; s_fid=0E1DA49E28F8121F-2D70128875F7307B; s_cc=true; as_pcts=5dUFDgjva5fW+BzVnVjAIMMwP6Y2ks+HcKqnxcit-1nx9LjH5a4Tg404UYuWhvKQXOeHgBhv996uz1iS65LBKk2X2vST4vppIdd9AWW6_Zp83-FApPo6Y9t5TNa1oVsjjN8bOGn6Tn5x7yxpRL3BVPxw4_xJ6E3m67sBWXPINuqLeys626V_GGD-K_uy1F:PVjneuPR8oLQFMpCKNm7O4; as_dc=ucp7; s_vi=[CS]v1|346DC0A7AA9CA977-6000038C183F57D5[CE]; as_atb=1.0|MjAyNS0wOS0zMCAxMjowNTo1Mw|62ced69a31f745d99887fbaef812238326ba3caf; shld_bt_ck=fwsRfuv6RHYg6Eg1oCw5EA|1759223180|uKmzYZW2Esd1WeecibqWlAnTTH8I-8664xy3DLpr71Cfy5aHduph1z0p0FBaqMAYjBtShaaOFoiCUXdoChD8A5dwMmh2t3UxvXKRz86xDKgwxJ0Bp6FoBWn25DlcqKPKdLrfGZKo5xM-2Pn3JeyX6Fk9OrHJo3dGR5cIWBPSIxnA51wz4Yo2c48sQLmjczQtqn1FR2Ax1TdDzbZv26bYk2oOVaA4xM6NTOsZWLgHel3i7Ar__LKsyOmx_dmJdOGtpbpeOf2tbxWffdgGnYudiYRN0L5EdMlCDzCyE-vVNT-wX6YWvq8lKtn3aLkRj2xmBitINBT-xFfQXovePehoDg|5YmZVhZM9ZEhj33CDDaocgsWdNM; s_sq=applestoreww%3D%2526c.%2526a.%2526activitymap.%2526page%253DAOS%25253A%252520home%25252Fshop_iphone%25252Ffamily%25252Fiphone_17_pro%25252Fselect%2526link%253D%252528inner%252520text%252529%252520%25257C%252520no%252520href%252520%25257C%252520body%2526region%253Dbody%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c; shld_bt_m=NR2YGdgqrqV5Cid0xzY_eQ|1759223201|w6XuxsgAtwd3HiCu7ms-QA|V9lnya7R3GzDTkvClPmCu1m9c5E' \
+  -H 'dnt: 1' \
+  -H 'pragma: no-cache' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.apple.com.cn/shop/buy-iphone/iphone-17-pro/MG8W4CH/A' \
+  -H 'sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' \
+  -H 'x-aos-ui-fetch-call-1: 0z7npny54r-mg67sap3'
+
+
+curl 'https://www.apple.com.cn/shop/fulfillment-messages?fae=true&pl=true&mts.0=regular&parts.0=MG8W4CH/A&location=%E5%8C%97%E4%BA%AC%20%E5%8C%97%E4%BA%AC%20%E4%B8%9C%E5%9F%8E%E5%8C%BA' \
+  -H 'accept: */*' \
+  -H 'accept-language: zh-CN,zh;q=0.9' \
+  -H 'cache-control: no-cache' \
+  -b 'dssid2=1d95e066-2e33-455b-9661-8e51fb3010ee; dssf=1; as_sfa=Mnxjbnxjbnx8emhfQ058Y29uc3VtZXJ8aW50ZXJuZXR8MHwwfDE; as_uct=2; geo=SG; s_fid=0E1DA49E28F8121F-2D70128875F7307B; s_cc=true; as_pcts=5dUFDgjva5fW+BzVnVjAIMMwP6Y2ks+HcKqnxcit-1nx9LjH5a4Tg404UYuWhvKQXOeHgBhv996uz1iS65LBKk2X2vST4vppIdd9AWW6_Zp83-FApPo6Y9t5TNa1oVsjjN8bOGn6Tn5x7yxpRL3BVPxw4_xJ6E3m67sBWXPINuqLeys626V_GGD-K_uy1F:PVjneuPR8oLQFMpCKNm7O4; as_dc=ucp7; s_vi=[CS]v1|346DC0A7AA9CA977-6000038C183F57D5[CE]; as_atb=1.0|MjAyNS0wOS0zMCAxMjowNTo1Mw|62ced69a31f745d99887fbaef812238326ba3caf; shld_bt_ck=fwsRfuv6RHYg6Eg1oCw5EA|1759223180|uKmzYZW2Esd1WeecibqWlAnTTH8I-8664xy3DLpr71Cfy5aHduph1z0p0FBaqMAYjBtShaaOFoiCUXdoChD8A5dwMmh2t3UxvXKRz86xDKgwxJ0Bp6FoBWn25DlcqKPKdLrfGZKo5xM-2Pn3JeyX6Fk9OrHJo3dGR5cIWBPSIxnA51wz4Yo2c48sQLmjczQtqn1FR2Ax1TdDzbZv26bYk2oOVaA4xM6NTOsZWLgHel3i7Ar__LKsyOmx_dmJdOGtpbpeOf2tbxWffdgGnYudiYRN0L5EdMlCDzCyE-vVNT-wX6YWvq8lKtn3aLkRj2xmBitINBT-xFfQXovePehoDg|5YmZVhZM9ZEhj33CDDaocgsWdNM; s_sq=applestoreww%3D%2526c.%2526a.%2526activitymap.%2526page%253DAOS%25253A%252520home%25252Fshop_iphone%25252Ffamily%25252Fiphone_17_pro%25252Fselect%2526link%253D%252528inner%252520text%252529%252520%25257C%252520no%252520href%252520%25257C%252520body%2526region%253Dbody%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c; shld_bt_m=NR2YGdgqrqV5Cid0xzY_eQ|1759223202|BsKwEar2kmIDajfRA-uhvg|xalHL4A9FRzjg1yk0AtgWvz56RE' \
+  -H 'dnt: 1' \
+  -H 'pragma: no-cache' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.apple.com.cn/shop/buy-iphone/iphone-17-pro/MG8W4CH/A' \
+  -H 'sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' \
+  -H 'x-aos-ui-fetch-call-1: ij5op6mikv-mg67sats'
+
+curl 'https://www.apple.com.cn/shop/pickup-message-recommendations?fae=true&mts.0=regular&location=%E5%8C%97%E4%BA%AC%20%E5%8C%97%E4%BA%AC%20%E4%B8%9C%E5%9F%8E%E5%8C%BA&product=MG8W4CH/A' \
+  -H 'accept: */*' \
+  -H 'accept-language: zh-CN,zh;q=0.9' \
+  -H 'cache-control: no-cache' \
+  -b 'dssid2=1d95e066-2e33-455b-9661-8e51fb3010ee; dssf=1; as_sfa=Mnxjbnxjbnx8emhfQ058Y29uc3VtZXJ8aW50ZXJuZXR8MHwwfDE; as_uct=2; geo=SG; s_fid=0E1DA49E28F8121F-2D70128875F7307B; s_cc=true; as_pcts=5dUFDgjva5fW+BzVnVjAIMMwP6Y2ks+HcKqnxcit-1nx9LjH5a4Tg404UYuWhvKQXOeHgBhv996uz1iS65LBKk2X2vST4vppIdd9AWW6_Zp83-FApPo6Y9t5TNa1oVsjjN8bOGn6Tn5x7yxpRL3BVPxw4_xJ6E3m67sBWXPINuqLeys626V_GGD-K_uy1F:PVjneuPR8oLQFMpCKNm7O4; as_dc=ucp7; s_vi=[CS]v1|346DC0A7AA9CA977-6000038C183F57D5[CE]; as_atb=1.0|MjAyNS0wOS0zMCAxMjowNTo1Mw|62ced69a31f745d99887fbaef812238326ba3caf; shld_bt_ck=fwsRfuv6RHYg6Eg1oCw5EA|1759223180|uKmzYZW2Esd1WeecibqWlAnTTH8I-8664xy3DLpr71Cfy5aHduph1z0p0FBaqMAYjBtShaaOFoiCUXdoChD8A5dwMmh2t3UxvXKRz86xDKgwxJ0Bp6FoBWn25DlcqKPKdLrfGZKo5xM-2Pn3JeyX6Fk9OrHJo3dGR5cIWBPSIxnA51wz4Yo2c48sQLmjczQtqn1FR2Ax1TdDzbZv26bYk2oOVaA4xM6NTOsZWLgHel3i7Ar__LKsyOmx_dmJdOGtpbpeOf2tbxWffdgGnYudiYRN0L5EdMlCDzCyE-vVNT-wX6YWvq8lKtn3aLkRj2xmBitINBT-xFfQXovePehoDg|5YmZVhZM9ZEhj33CDDaocgsWdNM; s_sq=applestoreww%3D%2526c.%2526a.%2526activitymap.%2526page%253DAOS%25253A%252520home%25252Fshop_iphone%25252Ffamily%25252Fiphone_17_pro%25252Fselect%2526link%253D%252528inner%252520text%252529%252520%25257C%252520no%252520href%252520%25257C%252520body%2526region%253Dbody%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c; shld_bt_m=NR2YGdgqrqV5Cid0xzY_eQ|1759223202|BsKwEar2kmIDajfRA-uhvg|xalHL4A9FRzjg1yk0AtgWvz56RE' \
+  -H 'dnt: 1' \
+  -H 'pragma: no-cache' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.apple.com.cn/shop/buy-iphone/iphone-17-pro/MG8W4CH/A' \
+  -H 'sec-ch-ua: "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' \
+  -H 'x-aos-ui-fetch-call-1: hjvpmt094u-mg67scva'
